@@ -1,0 +1,23 @@
+{
+  "name": "simulador-de-corridas-do-mario-kart",
+  "version": "1.0.0",
+  "description": "Neste projeto, foi desenvolvida uma corrida que considera as habilidades dos personagens e as variáveis das pistas. O desenvolvimento foi realizado utilizando NodeJS.",
+  "homepage": "https://github.com/GiovannaAMidonz/Simulador-de-corridas-do-mario-kart#readme",
+  "bugs": {
+    "url": "https://github.com/GiovannaAMidonz/Simulador-de-corridas-do-mario-kart/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GiovannaAMidonz/Simulador-de-corridas-do-mario-kart.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
