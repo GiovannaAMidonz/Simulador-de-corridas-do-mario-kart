@@ -113,10 +113,17 @@ async function playRaceEngine(character1,character2) {
             await logRollResult(character1.Nome,"poder",diceResult1,character1.Poder);
             await logRollResult(character2.Nome,"poder",diceResult2,character2.Poder);
 
-           character2.Pontos -=
-            powerResult1 > powerResult2 && character2.Pontos > 0 ? 1 : 0;
-           character1.Pontos -=
-            powerResult2 > powerResult1 && character1.Pontos > 0 ? 1 : 0;
+           
+            if(powerResult1 > powerResult2 && character2.Pontos > 0 ? 1 : 0){
+                 console.log(`${character1.Nome} marcou um ponto! E ${character2.Nome} perdeu um ponto! 🐢🐢`);
+                 character2.Pontos--;
+            }
+            
+           if(powerResult2 > powerResult1 && character1.Pontos > 0 ? 1 : 0){
+             console.log(`${character2.Nome} marcou um ponto! E ${character1.Nome} perdeu um ponto! 🐢🐢`);
+             character1.Pontos--;
+           }
+             
             console.log(powerResult2 === powerResult1 ? "confronto empatado " : "");
 
         }
@@ -135,12 +142,26 @@ async function playRaceEngine(character1,character2) {
     
 };
 
+    async function declareWinner(character1, character2){
+        console.log("Resultado final:");
+        console.log(`${character1.Nome}: ${character1.Pontos}`);
+        console.log(`${character2.Nome}: ${character2.Pontos}`);
 
+        if(character1.Pontos >character2.Pontos){
+            console.log(`\n ${character1.Nome} venceu a corrida! parabéns 🏆`)
+        }else if(character2.Pontos >character1.Pontos){
+            console.log(`\n ${character2.Nome} venceu a corrida! parabéns 🏆`)
+        }else{
+            console.log("A corrida terminou em empante! 🏁🤞")
+        }
+    }
 (async function main() {
     console.log(
         `🚨🏁 Corrida entre ${player1.Nome} e ${player6.Nome} começando...\n`
     )
 
     await playRaceEngine(player1,player2);
+
+    await declareWinner(player1, player2)
     
 })();
